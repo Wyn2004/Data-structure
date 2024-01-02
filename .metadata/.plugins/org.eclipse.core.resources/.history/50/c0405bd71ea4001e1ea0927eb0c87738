@@ -1,0 +1,6 @@
+package Exercise;
+
+public class E13_Palindrome {
+
+}
+char[] arr = { 'a', 'b', 'c', 'b', 'a' };

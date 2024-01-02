@@ -1,0 +1,13 @@
+package Exercise;
+
+public class E15_HaNoiTower {
+	public static void main(String[] args) {
+		int nDisks = 3;
+		doTowers(nDisks, 'A', 'B', 'C');
+	}
+
+	public static void doTowers(int topN, char a, char b, char c) {
+		if (topN==1)
+			System.out.println("Disk 1: from "+ a+ "");
+	}
+}

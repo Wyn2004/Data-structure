@@ -1,0 +1,9 @@
+package Module;
+
+public class Node<E> {
+	
+	private E Value;
+	private Node<E> left;
+
+	
+}

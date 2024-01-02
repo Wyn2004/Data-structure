@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;checkSymmetric.java&apos; to &apos;StackAndQueue/src/Excercise&apos;&#x0A;- Original project: &apos;StackAndQueue&apos;&#x0A;- Destination element: &apos;StackAndQueue/src/Excercise&apos;&#x0A;- Original element: &apos;Module.checkSymmetric.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;Excercise" element1="/src&lt;Module{checkSymmetric.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1703510353283" units="1" version="1.0"/>
+</session>

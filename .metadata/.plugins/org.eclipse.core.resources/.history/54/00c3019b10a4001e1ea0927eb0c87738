@@ -1,0 +1,18 @@
+package Exercise;
+
+import java.util.Scanner;
+
+public class E7_POW2 {
+	
+	public static int pow_2(int a) {
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter numbers a: ");
+		int a = scanner.nextInt();
+=		System.out.println("Result of division a and b is: " + pow_2(a));
+		scanner.close();
+	}
+}

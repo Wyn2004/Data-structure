@@ -1,0 +1,12 @@
+package Exercise;
+
+import java.util.Scanner;
+
+public class E13_Palindrome {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		char[] arr = { 'a', 'b', 'c', 'b', 'a' };
+		System.out.println("Minimun in array is: " + sumArr(arr, arr.length));
+		scanner.close();
+	}
+}

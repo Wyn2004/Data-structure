@@ -1,0 +1,19 @@
+package Exercise;
+
+import java.util.Scanner;
+
+public class E11_MinArr {
+
+	public static int minArr(int[] arr, int n) {
+		n--;
+		int min = arr[n];
+		if(min)
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int[] arr = { 1, 2, 3, 4, 5 };
+		System.out.println("Result of division a and b is: " + minArr(arr, arr.length));
+		scanner.close();
+	}
+}

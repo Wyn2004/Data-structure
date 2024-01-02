@@ -1,0 +1,19 @@
+package Module;
+
+public class Node<E> {
+
+	private E value;
+	private Node<E> left, right;
+
+	public Node(E value) {
+		this.value = value;
+		this.left = null;
+		this.right = null;
+	}
+	
+	public Node(E value) {
+		this.value = value;
+		this.left = null;
+		this.right = null;
+	}
+}

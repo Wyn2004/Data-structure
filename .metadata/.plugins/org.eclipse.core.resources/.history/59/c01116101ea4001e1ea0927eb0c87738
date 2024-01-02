@@ -1,0 +1,12 @@
+package Exercise;
+
+import java.util.Scanner;
+
+public class E12_SumArr {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int[] arr = { 0, -98, 3, 4, -9 };
+		System.out.println("Minimun in array is: " + minArr(arr, arr.length));
+		scanner.close();
+	}
+}
