@@ -36,7 +36,7 @@ public class convertToPostfix {
 				else
 					stack.pop();
 			} else {
-				while (!stack.empty() && precedence(ch) <= precedence(stack.peek()))
+				while (!stack.empty() && precedence(ch) <= precedence(stack.peek()) && stack.peek()!='(')
 					postFix.append(stack.pop());
 				stack.push(ch);
 			}

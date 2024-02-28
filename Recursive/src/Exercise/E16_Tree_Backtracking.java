@@ -64,7 +64,7 @@ public class E16_Tree_Backtracking {
 
 		/// Permutations string
 		System.out.println("Permutations string: ");
-		char[] chars1 = { 'A', 'B', 'C'};
+		char[] chars1 = { 'A', 'B', 'C', 'D' };
 		generatePermutations(chars1, 0);
 		System.out.println();
 

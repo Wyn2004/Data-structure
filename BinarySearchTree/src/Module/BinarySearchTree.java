@@ -1,6 +1,8 @@
 package Module;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -294,7 +296,7 @@ public class BinarySearchTree<E> {
 
 	// Remove node
 	private Node<E> remove(int x, Node<E> node) {
-		if (root == null)
+		if (node == null)
 			return null;
 		else {
 			if ((int) node.value > x)
@@ -342,5 +344,24 @@ public class BinarySearchTree<E> {
 		}
 		root = sortTree.root;
 		preOrder();
+	}
+
+	// Is balance tree
+	private void inOrder(Node<E> node, List<E> list) {
+		if (node != null) {
+			inOrder(node.left, list);
+			list.add((E) node.value);
+			inOrder(node.right, list);
+		}
+	}
+
+	public boolean isValidBST(Node<E> root) {
+		List<E> list = new ArrayList<>();
+		inOrder(root, list);
+		for (int i = 0; i < list.size() - 1; i++) {
+			if ((int) list.get(i) > (int) list.get(i + 1))
+				return false;
+		}
+		return true;
 	}
 }
