@@ -1,4 +1,3 @@
-import java.security.Identity;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -40,18 +39,28 @@ class ListNode {
 
 public class test {
 
-	public int findBottomLeftValue(TreeNode root) {
-		Queue<TreeNode> queue = new LinkedList<>();
+	public boolean isEvenOddTree(TreeNode root) {
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.add(root);
-		TreeNode node = null;
+		boolean even = true;
 		while (!queue.isEmpty()) {
-			node = queue.poll();
-			if (node.right != null)
-				queue.add(node.right);
-			if (node.left != null)
-				queue.add(node.left);
+			int size = queue.size();
+			int prev = even ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+			for (int i = 0; i < size; i++) {
+				TreeNode node = queue.poll();
+				if (even && (node.val % 2 == 0 || node.val < prev))
+					return false;
+				if (!even && (node.val % 2 != 0 || node.val > prev))
+					return false;
+				prev = node.val;
+				if (node.left != null)
+					queue.add(node.left);
+				if (node.right != null)
+					queue.add(node.right);
+			}
+			even = !even;
 		}
-		return node.val;
+		return true;
 	}
 
 	public static void main(String args[]) {
