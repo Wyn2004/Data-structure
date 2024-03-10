@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -39,28 +40,28 @@ class ListNode {
 
 public class test {
 
-	public boolean isEvenOddTree(TreeNode root) {
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		queue.add(root);
-		boolean even = true;
-		while (!queue.isEmpty()) {
-			int size = queue.size();
-			int prev = even ? Integer.MIN_VALUE : Integer.MAX_VALUE;
-			for (int i = 0; i < size; i++) {
-				TreeNode node = queue.poll();
-				if (even && (node.val % 2 == 0 || node.val < prev))
-					return false;
-				if (!even && (node.val % 2 != 0 || node.val > prev))
-					return false;
-				prev = node.val;
-				if (node.left != null)
-					queue.add(node.left);
-				if (node.right != null)
-					queue.add(node.right);
+    public int[] intersection(int[] nums1, int[] nums2) {
+		int m = 0, n = 0;
+		Arrays.sort(nums1);
+		Arrays.sort(nums2);
+		LinkedList<Integer> list = new LinkedList<>();
+		while (m < nums1.length && n < nums2.length) {
+			if (nums1[m] > nums2[n])
+				n++;
+			else if (nums1[m] < nums2[n])
+				m++;
+			else {
+				if (!list.contains(nums1[m]))
+					list.add(nums1[m]);
+				System.out.println(list.toString());
+				n++;
+				m++;
 			}
-			even = !even;
 		}
-		return true;
+		int result[] = new int[list.size()];
+		for (int i = 0; i < list.size(); i++)
+			result[i] = list.get(n);
+		return result;
 	}
 
 	public static void main(String args[]) {
