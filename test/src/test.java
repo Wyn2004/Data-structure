@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 class TreeNode {
@@ -40,28 +42,50 @@ class ListNode {
 
 public class test {
 
-    public int[] intersection(int[] nums1, int[] nums2) {
-		int m = 0, n = 0;
-		Arrays.sort(nums1);
-		Arrays.sort(nums2);
-		LinkedList<Integer> list = new LinkedList<>();
-		while (m < nums1.length && n < nums2.length) {
-			if (nums1[m] > nums2[n])
-				n++;
-			else if (nums1[m] < nums2[n])
-				m++;
-			else {
-				if (!list.contains(nums1[m]))
-					list.add(nums1[m]);
-				System.out.println(list.toString());
-				n++;
-				m++;
-			}
+	public void toArray(ListNode head) {
+
+	}
+
+	public ListNode removeZeroSumSublists(ListNode head) {
+		ListNode temp = head;
+		List<Integer> list = new ArrayList<>();
+		while (temp != null) {
+			list.add(temp.val);
+			temp = temp.next;
 		}
-		int result[] = new int[list.size()];
-		for (int i = 0; i < list.size(); i++)
-			result[i] = list.get(n);
-		return result;
+		int i = 0;
+		while (i < list.size() - 1) {
+			int sum = list.get(i);
+			if (sum == 0) {
+				list.remove(i);
+				continue;
+			}
+			int j = i + 1;
+			while (j < list.size()) {
+				sum += list.get(j);
+				if (sum == 0) {
+					for (int k = i; k <= j - i; k++)
+						list.remove(k);
+					if (i != 0)
+						i--;
+					break;
+				}
+				j++;
+			}
+			System.out.println(i);
+			i++;
+		}
+		if (list.size() == 1 && list.get(0) == 0)
+			return null;
+		ListNode newHead = new ListNode(0);
+		temp = newHead;
+		for (int integer : list) {
+			if (integer == 0)
+				continue;
+			temp.next = new ListNode(integer);
+			temp = temp.next;
+		}
+		return newHead.next;
 	}
 
 	public static void main(String args[]) {
